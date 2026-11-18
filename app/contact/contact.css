@@ -1,0 +1,24 @@
+.page-contact .eyebrow {
+  color: inherit;
+}
+
+.page-contact .cc {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 28px;
+  padding: 32px;
+  min-height: 200px;
+  justify-content: space-between;
+  transition: transform 0.15s;
+}
+
+.page-contact .cc:hover {
+  transform: translateY(-3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-contact .cc:hover {
+    transform: none;
+  }
+}

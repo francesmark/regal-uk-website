@@ -1,0 +1,12 @@
+/* Home "Clarity first" bento: wide tiles span both columns.
+   Below two-column width the span would add an implicit column and overflow
+   (a bug in the prototype), so it drops back to one column there. */
+.page-home .span-2 {
+  grid-column: span 2;
+}
+
+@media (max-width: 675px) {
+  .page-home .span-2 {
+    grid-column: auto;
+  }
+}

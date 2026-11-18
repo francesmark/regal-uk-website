@@ -1,0 +1,10 @@
+.page-partners .node {
+  border-radius: 22px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 120px;
+  justify-content: flex-end;
+}
+

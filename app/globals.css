@@ -1,0 +1,281 @@
+/* Shared rules, lifted from the <helmet> block every prototype page repeated.
+   Page-only rules live next to each page, scoped under .page-<name>. */
+
+:root {
+  --navy: #152139;
+  --orange: #f24e24;
+  --ivory: #faf8f1;
+  --sky: #e9eff5;
+  --mint: #dcede6;
+  --rust: #b3300f;
+  --muted: #47516a;
+  --card-dark: #1e2d4d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-poppins), 'Poppins', system-ui, sans-serif;
+  color: #152139;
+  background: #faf8f1;
+}
+
+/* Per-page body colours from the prototype (seen only on overscroll) */
+body:has(.page-about) { background: #dcede6; }
+body:has(.page-services) { background: #e9eff5; }
+body:has(.page-partners) { background: #152139; color: #fff; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #152139;
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+.dark a:focus-visible,
+.dark button:focus-visible,
+.dark summary:focus-visible {
+  outline-color: #fff;
+}
+
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+.eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #b3300f;
+  margin: 0;
+}
+
+.dark .eyebrow {
+  color: #dcede6;
+}
+
+/* ---------- Nav ---------- */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 40px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.nav nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 8px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.nav nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+}
+
+.nav nav a:hover {
+  background: rgba(21, 33, 57, 0.08);
+}
+
+.nav--orange nav a:hover {
+  background: rgba(21, 33, 57, 0.12);
+}
+
+.dark .nav nav a:hover,
+.nav--dark nav a:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Active / call-to-action pill. Set after :hover so it keeps its colour. */
+.nav nav a.nav-pill,
+.nav nav a.nav-pill:hover {
+  background: #152139;
+  color: #fff;
+}
+
+.nav--dark nav a.nav-pill,
+.nav--dark nav a.nav-pill:hover {
+  background: #fff;
+  color: #152139;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+  min-height: 44px;
+  justify-content: center;
+}
+
+.logo img {
+  display: block;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 0 32px;
+  border-radius: 999px;
+  background: #f24e24;
+  color: #152139;
+  font-weight: 600;
+  font-size: 19px;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn:hover {
+  background: #ff6a42;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+  background: #f24e24;
+}
+
+/* Navy fill, used on orange backgrounds (Partners CTA) */
+.btn-navy {
+  display: inline-flex;
+  align-items: center;
+  min-height: 56px;
+  padding: 0 32px;
+  border-radius: 999px;
+  background: #152139;
+  color: #fff;
+  font-weight: 600;
+  font-size: 19px;
+}
+
+.btn-o {
+  display: inline-flex;
+  align-items: center;
+  min-height: 56px;
+  padding: 0 28px;
+  border-radius: 999px;
+  border: 2px solid currentColor;
+  font-weight: 600;
+  font-size: 17px;
+  background: transparent;
+  color: inherit;
+}
+
+.btn-o:hover {
+  background: rgba(21, 33, 57, 0.07);
+}
+
+/* Toggle pills (Home Leeds/London) */
+.tab {
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: 999px;
+  border: 2px solid #152139;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  background: transparent;
+  color: #152139;
+}
+
+/* Toggle cards (Services tiers) */
+.seg {
+  flex: 1 1 220px;
+  min-height: 64px;
+  padding: 12px 24px;
+  border-radius: 20px;
+  border: 2px solid #152139;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: transparent;
+  color: #152139;
+}
+
+.seg small {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.tab[aria-pressed='true'],
+.seg[aria-pressed='true'] {
+  background: #152139;
+  color: #fff;
+}
+
+/* ---------- Footer ---------- */
+.foot {
+  background: #152139;
+  color: #fff;
+  padding-top: 56px;
+  padding-bottom: 64px;
+}
+
+.foot--bordered {
+  border-top: 1px solid #2a3855;
+}
+
+.foot--deep {
+  background: #0e172b;
+}
+
+.foot a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.foot a:hover {
+  text-decoration: underline;
+}
+
+.foot p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #c9d1e0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

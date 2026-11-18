@@ -1,0 +1,63 @@
+.page-support .help {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 28px;
+  border-radius: 24px;
+  min-height: 96px;
+}
+
+.page-support .help:hover {
+  box-shadow: 0 0 0 3px #152139;
+}
+
+.page-support .help strong {
+  font-size: 22px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.page-support .help span.d {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #47516a;
+  display: block;
+}
+
+.page-support .step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 24px;
+  padding-bottom: 40px;
+}
+
+.page-support .step::before {
+  content: '';
+  position: absolute;
+  left: 27px;
+  top: 56px;
+  bottom: 0;
+  width: 2px;
+  background: #152139;
+  opacity: 0.25;
+}
+
+.page-support .step:last-child::before {
+  display: none;
+}
+
+.page-support .node {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #f24e24;
+  color: #152139;
+  font-weight: 700;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
